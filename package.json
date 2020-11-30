@@ -1,0 +1,62 @@
+{
+  "name": "css-property",
+  "version": "1.0.0",
+  "description": "Scaffold for umi based project",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "serve": "node ./server/index.js"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --max-warnings=0 --ignore-pattern !.umirc.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-angular": "^7.5.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-import": "^1.11.0",
+    "eslint": "^5.15.3",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-umi": "^1.4.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^2.7.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "^1.3.1",
+    "less-vars-to-js": "^1.3.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
+    "redbox-react": "^1.6.0",
+    "umi": "^2.6.3",
+    "umi-plugin-react": "^1.7.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "dva": "^2.4.1",
+    "express": "^4.16.4",
+    "js-cookie": "^2.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "path-to-regexp": "^3.0.0",
+    "react": "^16.8.4",
+    "react-helmet": "^5.2.0",
+    "replace-in-file": "^3.4.4",
+    "safe-reaper": "^1.1.0",
+    "uuid": "^8.3.1"
+  }
+}
