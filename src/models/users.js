@@ -13,7 +13,6 @@ export default withMixin({
 
   effects: {
     *initCurrentUser({ payload }, { put, call, select }) {
-      console.log(getToken())
       if (!getToken()) {
         message.warn('登录失效')
         return redirectTo('/o/login')

@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import router from 'umi/router'
 
 import styles from './index.less'
 
 const menus = [
   {
     key: '/',
-    name: 'Overview'
+    name: 'Overview',
+    disable: true
   },
   {
     key: '/ruler',
@@ -15,7 +17,8 @@ const menus = [
   },
   {
     key: '/other',
-    name: 'other'
+    name: 'other',
+    disable: true
   }
 ]
 
@@ -101,6 +104,14 @@ function Overview(props) {
                   className={classnames(styles.navItem, { [styles.itemActive]: index === 0 })}
                   style={{
                     ...delayStyle
+                  }}
+                  onClick={() => {
+                    if (m.disable) {
+                      return
+                    }
+                    return router.push({
+                      pathname: m.key
+                    })
                   }}
                 >
                   <span className="hover-target">{m.name}</span>

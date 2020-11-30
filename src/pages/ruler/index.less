@@ -1,39 +1,32 @@
-.wrapper {
+.container {
   width: 100%;
-  height: 1200px;
-  background: #eeeeee;
+  height: 100vh;
+  background: #ffffff;
+}
 
-  > canvas {
-    display: block;
-    position: absolute;
-    background: #ffffff;
+.topContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 30px;
+  // border-bottom: 1px solid #f0f1f5;
+  .input {
+    width: 20%;
   }
 }
 
-.clearIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  background: #1991eb;
-}
-
-:global {
-  .rule-line {
-    position: absolute;
-  }
-  .rule_hor {
+.mainContent {
+  position: relative;
+  width: 100%;
+  padding: 10px 30px;
+  > div {
+    position: relative;
     width: 100%;
-    height: 1px;
-    background-color: chocolate;
-    cursor: ns-resize;
-  }
-  .rule_ver {
     height: 100%;
-    width: 1px;
-    background-color: chocolate;
-    cursor: ew-resize;
+    border: 3px solid #f0f1f5;
+    overflow: auto;
   }
 }
