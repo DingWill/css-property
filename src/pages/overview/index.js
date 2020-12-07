@@ -3,24 +3,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import router from 'umi/router'
 
+import { menus } from './const'
 import styles from './index.less'
-
-const menus = [
-  {
-    key: '/',
-    name: 'Overview',
-    disable: true
-  },
-  {
-    key: '/ruler',
-    name: 'ruler'
-  },
-  {
-    key: '/other',
-    name: 'other',
-    disable: true
-  }
-]
 
 function Overview(props) {
   const [isShowNav, setNavShow] = useState(false)

@@ -1,10 +1,11 @@
 /** CONST **/
 const AXIS_LINEWIDTH = 1.0
-const AXIS_COLOR = '#042549'
+const AXIS_COLOR = '#dadadc'
 const TICKS_LINEWIDTH = 0.5
-const TICKS_COLOR = '#042549'
-const TICKS_SPACE = 5
-const FONT_SIZE = '8px'
+const TICKS_COLOR = '#BABBBC'
+const TICKS_SPACE = 10
+const FONT_SIZE = '12px'
+const FONT_COLOR = '#7D8694'
 const FONT_FAMILY = 'arial'
 /** CONST **/
 
@@ -22,10 +23,11 @@ function drawAxisTicks(context, config, type) {
       context.lineTo(startValue, itemHeight)
       context.textAlign = 'left'
       context.font = `${FONT_SIZE} ${FONT_FAMILY}`
-      context.fillText(`${i * space}`, startValue + 2, 8)
+      context.fillStyle = FONT_COLOR
+      context.fillText(`${i * space}`, startValue + 2, itemHeight)
     } else {
       const endY = Math.ceil(itemHeight / 2)
-      context.moveTo(i * space, itemHeight)
+      context.moveTo(i * space, 0)
       context.lineTo(i * space, endY)
     }
     context.stroke()
@@ -36,8 +38,8 @@ function drawAxis(context, config, type) {
   const { ruleWidth, itemHeight } = config
   const lineWidth = Math.ceil(ruleWidth / TICKS_SPACE) * TICKS_SPACE
   context.beginPath()
-  context.moveTo(0, itemHeight)
-  context.lineTo(lineWidth, itemHeight)
+  context.moveTo(0, 0)
+  context.lineTo(lineWidth, 0)
   context.closePath()
   context.stroke()
 }

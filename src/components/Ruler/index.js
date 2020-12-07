@@ -197,8 +197,8 @@ function Ruler(props) {
       className={styles.wrapper}
       ref={wrapperRef}
       style={{
-        width: canvasWidth,
-        height: canvasHeight
+        width: canvasWidth + itemHeight,
+        height: canvasHeight + itemHeight
       }}
     >
       <canvas
@@ -241,7 +241,8 @@ function Ruler(props) {
         style={{
           width: itemHeight,
           height: itemHeight,
-          lineHeight: `${itemHeight}px`
+          lineHeight: `${itemHeight}px`,
+          textAlign: 'center'
         }}
       >
         <Icon

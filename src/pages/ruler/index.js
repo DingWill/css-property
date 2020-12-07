@@ -28,6 +28,11 @@ function RulerPage(props) {
     setColor(val)
   }, [])
 
+  console.group('Ruler -')
+  console.log('%c辅助线双击可以删除。', 'color: #EB5648')
+  console.log('%c辅助线拖拽到比例尺处，可以删除。', 'color: #EB5648')
+  console.log('%c点击右上角Pin可以显示隐藏辅助线。', 'color: #EB5648')
+  console.groupEnd('Ruler -')
   return (
     <div className={styles.container}>
       <div className={styles.topContent}>
@@ -60,7 +65,7 @@ function RulerPage(props) {
             width={width}
             height={height}
             scale={scale}
-            itemWidth={16}
+            itemHeight={24}
             config={{
               lineColor: lineColor
             }}
